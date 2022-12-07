@@ -1,0 +1,49 @@
+map s <nop>
+map S :w<CR>
+map Q :q<CR>
+map si :set splitright<CR>:vsplit<CR>
+map sn :set nosplitright<CR>:vsplit<CR>
+map su :set nosplitbelow<CR>:split<CR>
+map sm :set splitbelow<CR>:split<CR>
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+map tu :tabe<CR>
+map tn :-tabnext<CR>
+map ti :+tabnext<CR>
+map sv <C-w>t<C-w>H
+map sh <C-w>t<C-w>K
+
+call plug#begin('~/.vim/plugged')
+Plug  'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+Plug 'lervag/vimtex'
+
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+call plug#end()
+colorscheme snazzy
+
+
+set number
+set norelativenumber
+set cursorline
+set wrap
+set showcmd
+set wildmenu
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
+
+" This code should go in your vimrc or init.vim
+let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
+let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'  " use Shift-Tab to move backward through tabstops
